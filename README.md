@@ -2,7 +2,7 @@
 Modelo de Blog - Curso PHP Master (Udemy)
 Requerimientos plantilla de un blog
 
-1- Barra de navegación
+1- Barra de navegación <br>
 2- Últimas entradas
 3- Opción de login/registro en el sidebar
 4- Página de edición de datos de los usuarios
