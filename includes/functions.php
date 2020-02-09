@@ -82,7 +82,7 @@ function mostrarCategoria_Entradas($conectar, $id){
  }
 
  
- function mostrarEntradas($conectar, $id, $limit = null, $categoria = null, $id_entrada = null){
+ function mostrarEntradas($conectar, $id, $limit = null, $categoria = null, $id_entrada = null, $busqueda = null){
      $query = "SELECT e.*, c.id as cat_id, c.nombre_cat FROM entradas e INNER JOIN categorias c ON c.id = e.categoria_id WHERE c.user_id = $id ORDER BY fecha DESC";
      
      if ($limit){
@@ -94,6 +94,10 @@ function mostrarCategoria_Entradas($conectar, $id){
      
      if ($id_entrada){
          $query = "SELECT e.*, c.id as cat_id, c.nombre_cat FROM entradas e INNER JOIN categorias c ON c.id = e.categoria_id WHERE e.id = $id_entrada";
+     }
+     
+     if ($busqueda){
+         $query = "SELECT e.*, c.id as cat_id, c.nombre_cat FROM entradas e INNER JOIN categorias c ON c.id = e.categoria_id WHERE e.titulo LIKE '%$busqueda%' OR e.descripcion LIKE '%$busqueda%' ORDER BY fecha DESC";
      }
      
      $entrada = mysqli_query($conectar, $query);

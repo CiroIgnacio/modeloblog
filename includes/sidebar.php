@@ -1,6 +1,14 @@
 <!-- Barra lateral -->
 
 <aside id = "sidebar">
+    <!-- Buscador -->
+    <div id="buscador" class="block-aside">
+        <h3>Búsqueda</h3>
+        <form action="buscar.php" method="post">
+            <input type="text" name="buscar"/>
+            <input type="submit" value="Buscar">
+        </form>
+    </div>
     
     <!-- Informacion usuario -->
     
